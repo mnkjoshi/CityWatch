@@ -16,10 +16,11 @@ const app = express();
 app.use(cors());
 
 app.get("/report/", (req, res) => {
-
+    res.send("");
 })
 app.put("/report/", (req, res) => {
     console.log(req.body);
+    res.send("");
 })
 
 exports.app = functions.https.onRequest(app);
