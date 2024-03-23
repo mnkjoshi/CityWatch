@@ -1,3 +1,4 @@
 .DS_Store
 backend/secret.json
 camera-system/fp16/net_last.pth
+backend/functions/node_modules
