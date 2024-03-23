@@ -1,0 +1,65 @@
+.viewpage {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.title {
+    color: #F9FAFD;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    padding: 0 30px;
+    color: rgb(212, 212, 212);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.logo {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.categoryLabel {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.subSectionLabel {
+    text-decoration: none;
+    color: rgb(212, 212, 212);
+    font-weight: 400;
+}
+
+.mainApp {
+    position: relative;
+    display: block;
+    background-color: #ececec;
+    width: 100%;
+    margin: 20px;
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+
+.mainApp::-webkit-scrollbar {
+    display: none;
+}
+
+.iconLabel {
+    margin-right: 8px;
+}
