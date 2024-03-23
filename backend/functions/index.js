@@ -9,14 +9,19 @@
 
 const functions = require("firebase-functions");
 const logger = require("firebase-functions/logger");
-const express = require("express")
-const cors = require("cors")
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 app.use(cors());
 
-app.get("/test/:id", (req, res)=>{
-    res.send("Aggi was here" + req?.params?.id)
+app.get("/report/", (req, res) => {
+    
+})
+app.put("/report/", (req, res) => {
+    console.log(req.body);
+
+    res.send("Aggi was here" + req?.params?.id);
 })
 
 exports.app = functions.https.onRequest(app);
