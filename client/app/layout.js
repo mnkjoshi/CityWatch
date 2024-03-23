@@ -7,6 +7,7 @@ import "./globals.css";
 export const metadata = {
   title: "CitiWatch",
   description: "CitiWatch",
+  icon: "/logo.png"
 };
 
 const missinaSans = localFont({ src: "./MessinaSans.ttf", weight: "" })
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
             <div className={styles.navbar}>
               <Image
                 className={styles.logo}
-                src="/logo.svg"
+                src="/logo.png"
                 alt="CitiWatch"
                 width={30}
                 height={30}
