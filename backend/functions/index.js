@@ -15,8 +15,8 @@ const cors = require("cors")
 const app = express();
 app.use(cors());
 
-app.get("/test", (req, res)=>{
-    res.send("Aggi was here")
+app.get("/test/:id", (req, res)=>{
+    res.send("Aggi was here" + req?.params?.uid)
 })
 
 exports.app = functions.https.onRequest(app);
