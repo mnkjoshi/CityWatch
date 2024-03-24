@@ -4,3 +4,10 @@ html, body {
   background: #00112E;
   min-height: 100vh;
 }
+
+.leaflet-container {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+}
