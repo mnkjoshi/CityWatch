@@ -13,6 +13,7 @@ const express = require("express");
 const cors = require("cors");
 const admin = require("firebase-admin");
 admin.initializeApp();
+const root = admin.database().ref();
 
 const app = express();
 app.use(cors());
