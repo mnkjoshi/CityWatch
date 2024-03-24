@@ -8,6 +8,12 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
 const missinaSans = localFont({ src: "./MessinaSans.ttf", weight: "" });
+export const metadata = {
+  title: "CitiWatch",
+  description: "CitiWatch",
+  icon: "/logo.png"
+};
+
 export default function RootLayout({ children }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -15,19 +21,22 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${styles.viewpage} ${missinaSans.className}`}>
-        <div className={styles.sidebar}>
-          {/* Navbar */}
-          <div className={styles.navbar}>
-            <Image
-              className={styles.logo}
-              src="/logo.svg"
-              alt="CitiWatch"
-              width={30}
-              height={30}
-            />
-            <h2 className={styles.title}>CitiWatch</h2>
-          </div>
+        <body className={`${styles.viewpage} ${missinaSans.className}`}>
+
+          <div className={styles.sidebar}>
+          
+          
+            {/* Navbar */}
+            <div className={styles.navbar}>
+              <Image
+                className={styles.logo}
+                src="/logo.png"
+                alt="CitiWatch"
+                width={30}
+                height={30}
+              />
+              <h2 className={styles.title}>CitiWatch</h2>
+            </div>
 
           {/* Sidebar Links*/}
           <p
