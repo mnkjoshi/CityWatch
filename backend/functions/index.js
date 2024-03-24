@@ -11,11 +11,14 @@ const functions = require("firebase-functions");
 const logger = require("firebase-functions/logger");
 const express = require("express");
 const cors = require("cors");
+const admin = require("firebase-admin");
+admin.initializeApp();
 
 const app = express();
 app.use(cors());
 
 app.get("/report/", (req, res) => {
+    let db = FirebaseDatabase()
     res.send("");
 })
 app.put("/report/", (req, res) => {
