@@ -21,19 +21,27 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${styles.viewpage} ${missinaSans.className}`}>
-        <div className={styles.sidebar}>
-          {/* Navbar */}
-          <div className={styles.navbar}>
-            <Image
-              className={styles.logo}
-              src="/logo.png"
-              alt="CitiWatch"
-              width={30}
-              height={30}
-            />
-            <h2 className={styles.title}>CitiWatch</h2>
-          </div>
+
+        <head>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossOrigin=""/>
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossOrigin=""></script>
+        </head>
+        <body className={`${styles.viewpage} ${missinaSans.className}`}>
+
+          <div className={styles.sidebar}>
+          
+          
+            {/* Navbar */}
+            <div className={styles.navbar}>
+              <Image
+                className={styles.logo}
+                src="/logo.svg"
+                alt="CitiWatch"
+                width={30}
+                height={30}
+              />
+              <h2 className={styles.title}>CitiWatch</h2>
+            </div>
 
           {/* Sidebar Links*/}
           <p
