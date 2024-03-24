@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import styles from './find.module.css';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
+import { useEffect } from 'react';
 
 export default function Page() {
 
@@ -15,15 +16,34 @@ export default function Page() {
         [53.5466034,-113.5116643]
     ]
 
+    const [file, setFile] = useState(null)
+    const [previewUrl, setPreviewUrl] = useState(null)
     const [individualHistory, setIndividualHistory] = useState([]);
 
-    const switchHistory = (e) => {
-        e.preventDefault();
+    const switchHistory = () => {
         if (individualHistory.length === 0) {
             setIndividualHistory(positionData);
         } else {
             setIndividualHistory([]);
         }
+    }
+
+    useEffect(() => {
+        if (!file) {
+          return
+        }
+        setPreviewUrl(URL.createObjectURL(file))
+      
+        return () => {
+            URL.revokeObjectURL(previewUrl);
+            switchHistory();
+        }
+      }, [file])
+
+    const resetImage = () => {
+        setFile(null);
+        setPreviewUrl(null);
+        setIndividualHistory([]);
     }
 
 
@@ -39,11 +59,22 @@ export default function Page() {
 
                 {/* Image upload section */}
                 <div className={styles.imageUpload}>
-                    <form className={styles.imageUploadContent} onSubmit={switchHistory}>
-                        <input type="file" id="file" hidden/>
+                    <form className={styles.imageUploadContent}>
+                        <input type="file" id="file" hidden onChange={(e) => setFile(e.target.files[0])} />
                         <label htmlFor="file" className={styles.labelFile}>Choose an image...</label>
-                        {/* <button type="submit" className={styles.submitButton}>Submit</button> */}
                     </form>
+
+                    <div className={styles.imagePreview}>
+                        <img
+                            className={styles.imagePreviewContent} 
+                            src={previewUrl ? previewUrl: "https://via.placeholder.com/150"}
+                            alt="Preview" 
+                        />
+                    </div>
+
+                    {/* reset button */}
+                    {previewUrl && <button className={styles.resetButton} onClick={resetImage}>Reset</button>}
+                            
                 </div>
 
 
